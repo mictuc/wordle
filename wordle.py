@@ -77,8 +77,8 @@ def main():
     wordle = possibleWordles[random.randrange(len(possibleWordles))]
     wordle = wordle.upper()
 
-    wordList = loadWordList('engmix.txt',wordLength)
+    wordList = set(loadWordList('engmix.txt',wordLength) + possibleWordles)
     play(wordLength, turns, wordle, wordList)
-    
+
 
 main()
